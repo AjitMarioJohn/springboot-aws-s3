@@ -1,0 +1,38 @@
+server:
+  port: 9090
+
+logging:
+  level:
+    root: INFO
+    com.demo.springboot.aws: DEBUG
+
+amazon-properties:
+  endpointUrl: https://s3.us-east-1.amazonaws.com
+  accessKey: AKIA2JF66WJN6ATQK3HG
+  secretKey: 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
+  bucketName: ajit-springbootaws
+  region: us-east-1
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:springbootaws
+    driverClassName: org.h2.Driver
+    username: test
+    password: test
+    hikari:
+      connection-timeout: 20000
+      minimum-idle: 10
+      maximum-pool-size: 10
+      idle-timeout: 10000
+      max-lifetime: 1000
+      auto-commit: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: true
+        web-allow-others: false
+
